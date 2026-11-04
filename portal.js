@@ -5,5 +5,10 @@ try {
   const button = document.getElementById('launch');
   button.href = url.href; button.target = '_blank'; button.rel = 'noopener noreferrer';
   button.removeAttribute('aria-disabled'); button.textContent = '開始找窗口 ↗';
+  const admin = document.getElementById('admin');
+  if (admin) {
+    admin.href = url.href + '?page=admin'; admin.target = '_blank'; admin.rel = 'noopener noreferrer';
+    admin.removeAttribute('aria-disabled'); admin.textContent = '管理後台 ↗';
+  }
   document.getElementById('note').textContent = '直接開始引導，不需登入或驗證公司網域。';
 } catch (error) { /* Fail closed: the unconfigured portal has no external link. */ }
